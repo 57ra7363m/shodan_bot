@@ -5,13 +5,13 @@ import argparse
 print """
 
 
- _______  __   __  _______  ______   _______  __    _    _______  _______  _______ 
-|       ||  | |  ||       ||      | |   _   ||  |  | |  |  _    ||       ||       |
-|  _____||  |_|  ||   _   ||  _    ||  |_|  ||   |_| |  | |_|   ||   _   ||_     _|
-| |_____ |       ||  | |  || | |   ||       ||       |  |       ||  | |  |  |   |  
-|_____  ||       ||  |_|  || |_|   ||       ||  _    |  |  _   | |  |_|  |  |   |  
- _____| ||   _   ||       ||       ||   _   || | |   |  | |_|   ||       |  |   |  
-|_______||__| |__||_______||______| |__| |__||_|  |__|  |_______||_______|  |___|  
+ _______  __   __  _______  ______   _______  __    _          _______  _______  _______ 
+|       ||  | |  ||       ||      | |   _   ||  |  | |        |  _    ||       ||       |
+|  _____||  |_|  ||   _   ||  _    ||  |_|  ||   |_| |        | |_|   ||   _   ||_     _|
+| |_____ |       ||  | |  || | |   ||       ||       |        |       ||  | |  |  |   |  
+|_____  ||       ||  |_|  || |_|   ||       ||  _    |        |  _   | |  |_|  |  |   |  
+ _____| ||   _   ||       ||       ||   _   || | |   | _____  | |_|   ||       |  |   |  
+|_______||__| |__||_______||______| |__| |__||_|  |__||_____| |_______||_______|  |___|  
 
 
 """
@@ -19,20 +19,16 @@ print ""
 print ""
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--key', help = "Input Shodan Key Here")
 parser.add_argument('--query', help = "Search Shodan for Term", action = 'store_true')
 parser.add_argument('--host', help = "Search Shodan for Host", action = 'store_true')
 
 
 args = parser.parse_args()
-key = args.key
 query = args.query
 host = args.host
 
-if args.key:
-
-	SHODAN_API_KEY = key
-	api = shodan.Shodan(SHODAN_API_KEY)
+SHODAN_API_KEY = "<insert API key here>"
+api = shodan.Shodan(SHODAN_API_KEY)
 
 if args.query:
 	query = raw_input('[+] Please Input Search String: ')
