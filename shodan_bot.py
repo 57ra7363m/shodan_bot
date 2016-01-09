@@ -43,6 +43,10 @@ if args.query:
 			print 'IP: %s' % result['ip_str']
 			print result['data']
 			print ''
+			with open('query.txt', 'a')as f:
+				f.write(result['ip_str'] + ':' + str(result['port']) + '\n')
+			
+			
 
 	except shodan.APIError, e:
 		print 'Error: %s' % e
@@ -62,3 +66,11 @@ if args.host:
 			Banner: %s
 
 		""" % (item['port'], item['data'])
+
+		with open('host.txt', 'a')as f:
+			f.write('\n')
+			f.write('\n')
+			f.write('Port: ' + str(item['port']) + '\n')
+			f.write('\n')
+			f.write('\n')
+			f.write(str(item['data']) + '\n')
