@@ -27,7 +27,7 @@ args = parser.parse_args()
 query = args.query
 host = args.host
 
-SHODAN_API_KEY = "G1N6HlDcWZ81STHWdRP7zk8Je1gwWCFC"
+SHODAN_API_KEY = "<insert API key here>"
 api = shodan.Shodan(SHODAN_API_KEY)
 
 if args.query:
